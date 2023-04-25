@@ -1,0 +1,229 @@
+@font-face {
+    font-family: 'FuturaBK';
+    src:local('fonts/FutuBd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.barra{
+    background-color: black; 
+    height: 90px; 
+    padding: 0 20px;
+    display: flex; /* Para alinear los elementos horizontalmente */
+    justify-content: space-between; /* Distribuye el espacio disponible */
+    align-items: center; /* Para centrar los elementos verticalmente  */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /*Alinea el contenido al inicio (izquierda) */
+}
+
+.logo img {
+    max-height: 75px; 
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none; /* Para quitar los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para alinear los elementos horizontalmente */
+}
+
+nav li {
+    margin-right: 20px; /* Para agregar espacio entre los elementos */
+}
+
+nav .bt-reservar {
+    background-color: #FFC221;
+    color: black;
+    border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
+    font-weight: bold;
+    border-radius: 20px; /* Hacer que los bordes sean redondeados */
+    padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
+}
+
+nav a {
+    color: #fff; 
+    text-decoration: none; /* Para quitar el subrayado de los enlaces */
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    font-family: 'FuturaBK', sans-serif;
+} 
+
+.separador {
+    height: 20px;
+    background-color: #FFC221;
+}
+
+/* Footer */
+footer {
+    background-color: #202020;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.columnas-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.columna-footer {
+    width: 40%;
+}
+
+.columna-footer h2 {
+    font-size: 21px;
+    color: #FFC221;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+    padding: 1px 15px;
+    font-family: 'FuturaBK', sans-serif;
+}
+
+.columna-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.columna-footer li {
+    margin-bottom: 6px;
+}
+
+.columna-footer a {
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.texto-footer {
+    text-align: center;
+    font-size: 9px;
+    margin-top: 20px;
+}
+
+/* Estilos slide carousel */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 20px;
+}
+
+.no-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 40%;
+    width: 50%;
+    text-align: center;
+    padding: 20px;
+}
+
+.carousel-textgr h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.firstyellow {
+    color: #FFC221;
+}
+
+.carousel-textgr a {
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #FFC221;
+    color: black;
+    border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
+    font-weight: bold;
+    border-radius: 20px; /* Hacer que los bordes sean redondeados */
+    padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
+}
+
+.carousel-textgr {
+    text-align: center;
+    color: #fff;
+}
+
+.carousel-text {
+    text-align: center;
+    color: #fff;
+}
+
+.carousel-text h2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.carousel-text a {
+    margin-top: 20px;
+    text-transform: uppercase;
+    background-color: #FFC221;
+    color: black;
+    border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
+    font-weight: bold;
+    border-radius: 20px; /* Hacer que los bordes sean redondeados */
+    padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
+}
+
+/* noticias/productos */
+.noti {
+    display: flex;
+    background-color: #2D2D2D;
+    height: 600px;
+    align-items: center;
+}
+
+.noti-titulo {
+    color: #FFC221;
+    text-transform: uppercase;
+    font-size: 75px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    margin-left: 30px;
+}
+
+.noti-desc {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.noti-img {
+    flex: 1;
+    height: 100%;
+}
+
+.noti-img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.buto {
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #FFC221;
+    color: black;
+    border: 2px solid #FFC221;
+    font-weight: bold;
+    border-radius: 20px; 
+    padding: 8px 15px; 
+    margin-left: 300px;
+}

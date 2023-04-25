@@ -1,0 +1,27 @@
+.titulo {
+    text-align: center;
+}
+
+.tablamenu {
+    width: 90%;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.tablamenu thead th {
+    background-color: #FFC221;
+    color: black;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.tablamenu tbody td {
+    text-align: center;
+    padding: 16px;
+    border: 1px solid black;
+}
+
+.tablamenu tbody td img {
+    max-width: 150px;
+    max-height: 150px;
+}

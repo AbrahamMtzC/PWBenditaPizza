@@ -1,9 +1,26 @@
+/* Fuentes de Bendita Pizza */
 @font-face {
     font-family: 'FuturaBK';
-    src:local('fonts/FutuBd.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url(fonts/FutuBK.ttf);
 }
+
+@font-face {
+    font-family: 'FuturaBklt';
+    src: url(fonts/FutuBklt.ttf);
+}
+
+@font-face {
+    font-family: 'FuturaBd';
+    src: url(fonts/FutuBd.ttf);
+}
+
+@font-face {
+    font-family: 'FuturaBdlt';
+    src: url(fonts/FutuBdlt.ttf);
+}
+
+
+/* Fin Fuentes de Bendita Pizza */
 
 .barra{
     background-color: black; 
@@ -41,6 +58,7 @@ nav .bt-reservar {
     color: black;
     border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
     font-weight: bold;
+    font-family: 'FuturaBk', sans-serif;
     border-radius: 20px; /* Hacer que los bordes sean redondeados */
     padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
 }
@@ -98,14 +116,16 @@ footer {
 .columna-footer a {
     font-size: 14px;
     color: #fff;
+    font-family: 'FuturaBK', sans-serif;
     text-transform: uppercase;
     text-decoration: none;
 }
 
 .texto-footer {
     text-align: center;
+    font-family: 'FuturaBK', sans-serif;
     font-size: 9px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 /* Estilos slide carousel */
@@ -192,6 +212,8 @@ footer {
 
 .noti-titulo {
     color: #FFC221;
+    font-family: 'FuturaBd', sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
     font-size: 75px;
     margin-top: 10px;
@@ -201,9 +223,11 @@ footer {
 
 .noti-desc {
     color: #fff;
+    font-family: 'FuturaBK', sans-serif;
     font-size: 32px;
     margin-bottom: 30px;
     margin-left: 30px;
+    margin-right: 15px;
 }
 
 .noti-img {

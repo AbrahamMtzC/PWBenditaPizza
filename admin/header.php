@@ -28,7 +28,7 @@
                     <li><a href="menu.php">Menú</a></li>
                     <li><a href="#">Imagenes</a></li>
                     <li><a href="#">Editor de textos</a></li>
-                    <li><a href="#">Cerrar Sesión</a></li>
+                    <li><a href="../index.html">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </header>';

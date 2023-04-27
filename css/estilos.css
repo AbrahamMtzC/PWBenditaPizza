@@ -251,3 +251,28 @@ footer {
     padding: 8px 15px; 
     margin-left: 300px;
 }
+
+nav.menu {
+    background-color: #222629;
+}
+
+nav.menu img {
+    display: block;
+    margin: 0 120px; 
+}
+
+.reservar {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+  
+.sucursales {
+    text-align: center;
+    padding: 20px;
+}
+
+.reservar h1 {
+    color: white;
+    margin-bottom: 20px;
+}

@@ -26,12 +26,12 @@
     max-height: 150px;
 }
 
-.fa.fa-pencil-square-o:before {
+.fa.fa-pencil-square-o {
     color: #FFC221;
     font-size: xx-large;
 }
 
-.fa.fa-trash:before {
+.fa.fa-trash {
     color: #FFC221;
     font-size: xx-large;
 }

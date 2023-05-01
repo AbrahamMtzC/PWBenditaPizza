@@ -5,31 +5,19 @@
 }
 
 @font-face {
-    font-family: 'FuturaBklt';
-    src: url(fonts/FutuBklt.ttf);
+    src: url("../fonts/poppins.ttf");
+    font-family: "Poppins";
 }
-
-@font-face {
-    font-family: 'FuturaBd';
-    src: url(fonts/FutuBd.ttf);
-}
-
-@font-face {
-    font-family: 'FuturaBdlt';
-    src: url(fonts/FutuBdlt.ttf);
-}
-
 
 /* Fin Fuentes de Bendita Pizza */
 
 .barra{
-    background-color: black; 
-    height: 90px; 
-    padding: 0 20px;
+    background-color: black;
+    height: 90px;
     display: flex; /* Para alinear los elementos horizontalmente */
     justify-content: space-between; /* Distribuye el espacio disponible */
     align-items: center; /* Para centrar los elementos verticalmente  */
-}
+} 
 
 .logo {
     display: flex;
@@ -58,7 +46,8 @@ nav .bt-reservar {
     color: black;
     border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
     font-weight: bold;
-    font-family: 'FuturaBk', sans-serif;
+    font-family: "Poppins";
+    font-size: 18px;
     border-radius: 20px; /* Hacer que los bordes sean redondeados */
     padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
 }
@@ -69,7 +58,8 @@ nav a {
     font-size: 18px;
     text-transform: uppercase;
     padding: 10px 15px;
-    font-family: 'FuturaBK', sans-serif;
+    font-weight: bold;
+    font-family: "Poppins";
 } 
 
 .separador {
@@ -82,50 +72,68 @@ footer {
     background-color: #202020;
     color: #fff;
     padding: 40px 0;
-    text-align: center;
 }
 
 .columnas-footer {
     display: flex;
-    justify-content: space-between;
-}
-
-.columna-footer {
-    width: 40%;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 .columna-footer h2 {
     font-size: 21px;
     color: #FFC221;
-    margin-bottom: 9px;
     text-transform: uppercase;
-    padding: 1px 15px;
-    font-family: 'FuturaBK', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .columna-footer ul {
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
-.columna-footer li {
-    margin-bottom: 6px;
-}
-
 .columna-footer a {
-    font-size: 14px;
-    color: #fff;
-    font-family: 'FuturaBK', sans-serif;
-    text-transform: uppercase;
+    font-size: 16px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
 }
 
 .texto-footer {
-    text-align: center;
-    font-family: 'FuturaBK', sans-serif;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
     font-size: 9px;
-    margin-top: 30px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.footicons {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footicons a {
+    padding: 0px 0px 0px 0px;
+}
+
+.footicon{
+    padding: 0px 5px 0px 5px;
+    color: white;
+    font-size: 20px;
+}
+
+.fa-facebook {
+    font-size: 18px;
+}
+
+.footlogo {
+    display: flex;
+    justify-content: center;
+}
+
+.footlogo img {
+    max-height: 75px; 
 }
 
 /* Estilos slide carousel */
@@ -165,23 +173,18 @@ footer {
 }
 
 .carousel-textgr a {
-    margin-top: 20px;
-    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
     background-color: #FFC221;
     color: black;
     border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
     font-weight: bold;
     border-radius: 20px; /* Hacer que los bordes sean redondeados */
-    padding: 8px 15px; /* Agregar un poco de espacio interno para que el borde no toque el texto */
-}
-
-.carousel-textgr {
-    text-align: center;
-    color: #fff;
 }
 
 .carousel-text {
-    text-align: center;
     color: #fff;
 }
 
@@ -192,8 +195,9 @@ footer {
 }
 
 .carousel-text a {
-    margin-top: 20px;
-    text-transform: uppercase;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
     background-color: #FFC221;
     color: black;
     border: 2px solid #FFC221; /* Agregar un borde de 2px de ancho en color amarillo */
@@ -206,28 +210,25 @@ footer {
 .noti {
     display: flex;
     background-color: #2D2D2D;
-    height: 600px;
+    height: 750px;
     align-items: center;
 }
 
 .noti-titulo {
     color: #FFC221;
-    font-family: 'FuturaBd', sans-serif;
+    font-family: 'FuturaBK', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 75px;
-    margin-top: 10px;
-    margin-bottom: 10px; 
-    margin-left: 30px;
+    padding: 10px 30px;
 }
 
 .noti-desc {
     color: #fff;
-    font-family: 'FuturaBK', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-align: start;
     font-size: 32px;
-    margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 15px;
+    padding: 0px 15px 10px 30px;
 }
 
 .noti-img {
@@ -241,25 +242,87 @@ footer {
 }
 
 .buto {
-    text-transform: uppercase;
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
     background-color: #FFC221;
     color: black;
     border: 2px solid #FFC221;
     font-weight: bold;
     border-radius: 20px; 
-    padding: 8px 15px; 
-    margin-left: 300px;
+    margin: 30px 50px;
 }
 
-nav.menu {
-    background-color: #222629;
+/* Menu */
+.galeria{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: #393939;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
-nav.menu img {
+.contenido h3{
+    color: #FFC221;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.contenido {
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #202020;
+}
+
+.contenido:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+.contenido img{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
     display: block;
-    margin: 0 120px; 
 }
+
+.contenido p{
+    text-align: center;
+    padding-top: 0 8px;
+}
+
+.contenido h6{
+    font-size: 26px;
+    text-align: center;
+    margin: 0;
+}
+
+@media(max-width:1000px){
+    .contenido{
+        width: 45%;
+    }
+}
+@media(max-width:750px){
+    .contenido{
+        width: 100%;
+    }
+}
+
+/* fin menu */
 
 .reservar {
     display: flex;

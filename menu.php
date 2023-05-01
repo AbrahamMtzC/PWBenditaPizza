@@ -1,10 +1,18 @@
+<?php 
+    include "js/conexion.php";
+
+    $stmt = $conn->prepare("SELECT * FROM menu");
+    $stmt->execute();
+    $menu = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Inicio</title>
-    <meta description="Página reservar del sitio de Bendita Pizza">
+    <meta description="Menú del sitio de Bendita Pizza">
     <meta keywords="Pizzas estilo Chicago, Restaurante de pizzas en Durango, Pasta fresca y casera, Hamburguesas gourmet, Comida para llevar, Bebidas refrescantes, Cena en familia, Servicio a domicilio, Ingredientes frescos y de alta calidad, Menú variado, Ambiente acogedor y relajante">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -34,27 +42,43 @@
 	</header>
     <main>
         <div class="separador"></div>
-        <!-- hacer las reservas -->
+        <div class="galeria">
+            <div class="contenido">
+                <img src="img/platillos/no-image.png" alt="Papas a la francesa">
+                <h3>Bendita</h3>
+                <p>Pepperoni + Jamón + Tocino + Champiñones</p>
+                <h6>$295.00</h6>
+            </div>
+            <div class="contenido">
+                <img src="img/platillos/no-image.png" alt="Agua de Pepino">
+                <h3>Meat Lovers</h3>
+                <p>Pepperoni + Salchicha Italiana + Tocino + Salami</p>
+                <h6>$315.00</h6>
+            </div>
 
-        <div class="reservar">
-            <div class="sucursal">
-                <h1>Bendita Pizza Sucursal Calvario</h1>        
-                <div class="map"> 
-                    <!-- <img src="img/benditacal.jpg" alt="Bendita Pizza Calvario"> -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14576.78983336217!2d-104.6946554128418!3d24.024101100000028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bc83dfbc7d82b%3A0x93b8c652d3aad3c0!2sBendita%20Pizza!5e0!3m2!1ses-419!2smx!4v1682961002953!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <a href="https://wa.me/526181698705" class="btn">Reservar Ahora</a>
+            <div class="contenido">
+                <img src="img/platillos/no-image.png" alt="Papas a la francesa">
+                <h3>Italiana</h3>
+                <p>Salchicha Italiana + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</p>
+                <h6>$285.00</h6>
             </div>
-            <div class="sucursal">
-                <h1>Bendita Pizza Sucursal Libertad</h1>
-                <div class="map"> 
-                    <!-- <img src="img/benliberta.jpg" alt="Bendita Pizza Libertad"> -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14575.718377471665!2d-104.6728931128418!3d24.033547800000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb7d96f0f1e9f%3A0x88247353b83ff2af!2sBendita%20Pizza%20Libertad!5e0!3m2!1ses-419!2smx!4v1682962789088!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <a href="https://wa.me/526183660571" class="btn">Reservar Ahora</a>
+            <div class="contenido">
+                <img src="img/platillos/no-image.png" alt="Agua de Pepino">
+                <h3>Veggie</h3>
+                <p>Requesón + Espinaca + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</p>
+                <h6>$285.00</h6>
             </div>
+
+            <?php foreach ($menu as $platillo): ?>
+                <div class="contenido">
+                    <img src="<?php echo substr($platillo['foto'], 3); ?>" alt="<?php echo $platillo['nombre']; ?>">
+                    <h3> <?php echo $platillo['nombre']; ?> </h3>
+                    <p> <?php echo $platillo['descripcion']; ?> </p>
+                    <h6> <?php echo $platillo['precio']; ?> </h6>
+                </div>
+            <?php endforeach; ?>
+
         </div>
-        <!-- fin hacer las reservas -->
         <div class="separador"></div>
     </main>
     <footer>
@@ -99,3 +123,7 @@
     </footer>
 </body>
 </html>
+
+<?php
+    $conn = null;
+?>

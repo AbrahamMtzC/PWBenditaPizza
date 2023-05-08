@@ -74,7 +74,7 @@
                     <img src="<?php echo substr($platillo['foto'], 3); ?>" alt="<?php echo $platillo['nombre']; ?>">
                     <h3> <?php echo $platillo['nombre']; ?> </h3>
                     <p> <?php echo $platillo['descripcion']; ?> </p>
-                    <h6> <?php echo $platillo['precio']; ?> </h6>
+                    <h6> $<?php echo $platillo['precio']; ?>MXN </h6>
                 </div>
             <?php endforeach; ?>
 
@@ -121,6 +121,11 @@
             <a href=""><i class="fa-brands fa-whatsapp footicon"></i></a>
         </div>
     </footer>
+    <!-- boton para regresar -->
+    <button onclick="topFunction()" id="btnRegresar" title="Regresar arriba"> <i class="fa-regular fa-circle-up"></i> </button>
+
+    <!-- Javascript -->
+    <script src="js/scripts.js"></script>
 </body>
 </html>
 

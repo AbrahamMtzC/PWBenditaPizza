@@ -67,6 +67,37 @@ nav a {
     background-color: #FFC221;
 }
 
+/* Hover animations*/
+nav a:hover {
+    transform: scale(1.2);
+    color: #FFC221;
+}
+
+nav .bt-reservar:hover{
+    color: white;
+    background-color: transparent;
+}
+
+.btn:hover{
+    color: white;
+    border: 4px solid #FFC221;
+}
+
+.buto:hover{
+    transform: scale(1);
+    color: white;
+    background-color: transparent;
+}
+
+.columna-footer a:hover{
+    font-weight: bold;
+}
+
+.footicons a:hover{
+    transform: scale(1.5);
+}
+
+/* Fin Hover animations */
 /* Footer */
 footer {
     background-color: #202020;
@@ -137,6 +168,11 @@ footer {
 }
 
 /* Estilos slide carousel */
+#demo i{
+    font-size: 50px;
+    color: #FFC221;
+}
+
 .overlay {
     position: absolute;
     top: 50%;
@@ -373,7 +409,6 @@ footer {
     grid-row: span 2;
 }
 
-
 /* fin galeria de fotos */
 /* sucursales */
 .reservar {
@@ -405,3 +440,40 @@ footer {
     height: 450;
     border-radius: 10px 10px 10px 10px;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { /* width */
+    width: 8px;
+}
+    
+::-webkit-scrollbar-track { /* Track */
+    background: black;
+}
+    
+::-webkit-scrollbar-thumb { /* Handle */
+    background: #FFC221;
+}
+    
+::-webkit-scrollbar-thumb:hover { /* Handle on hover */
+    background: #555;
+}
+/* fin custom scrollbar */
+/* boton para regresar */
+#btnRegresar{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #FFC221;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+#btnRegresar:hover{
+    color: white;
+}
+/* fin boton para regresar */

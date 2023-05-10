@@ -440,7 +440,35 @@ footer {
     height: 450;
     border-radius: 10px 10px 10px 10px;
 }
+/* fin sucursales */
+/* Entrega uber eats didi */
+.imgDeliv{
+    max-width: 100%;
+    height: auto;
+}
 
+.imgLogo{
+    display: block;
+    max-width: 60%;
+    height: auto;
+    margin: auto;
+}
+
+.imgLogo:hover{
+    transform: scale(1.1);
+    padding-bottom: 20px;
+}
+
+.imgEntrega a {
+    position: absolute;
+}
+
+.imgEntrega{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Fin entrega */
 /* Custom scrollbar */
 ::-webkit-scrollbar { /* width */
     width: 8px;

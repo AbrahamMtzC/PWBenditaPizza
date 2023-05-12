@@ -1,3 +1,65 @@
+.cont {
+    margin-left: 100px;
+}
+
+/* barra de navegacion admin */
+.sidebar {
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    background-color: #505050;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+  
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.sidebar li {
+    position: relative;
+}
+
+.sidebar a {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+}
+  
+.sidebar a:hover {
+    background-color: #FFC221;
+    justify-content: space-between;
+    color: black;
+}
+  
+.sidebar i {
+    font-size: 24px;
+    padding: 20px;
+}
+  
+.sidebar span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+  
+.sidebar li:hover span {
+    display: block;
+    left: 60px;
+}
+
+/* fin barra de navegación admin */
+
 .titulo {
     text-align: center;
 }

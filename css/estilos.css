@@ -414,7 +414,7 @@ footer {
 .newsfeed-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #2D2D2D;
     font-family: "Poppins", sans-serif;
 }
@@ -425,8 +425,19 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: #202020;
+    border-radius: 5px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     padding: 20px;
+    width: 48%;
+    max-width: 600px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.news-item:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+    transform: scale(1.1);
 }
 
 .news-item img {
@@ -436,39 +447,8 @@ footer {
 
 .news-item h3 {
     font-size: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
     margin: 10px 0;
     color: white;
-}
-
-.show-more-btn {
-    background-color: #FFC221;
-    color: black;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-.show-more-btn:hover {
-    color: white;
-    background-color: transparent;
-    border: 2px solid #FFC221;
-    font-weight: bold;
-}
-
-.description {
-    display: none;
-    background-color: #f7f7f7;
-    padding: 20px;
-    margin-top: 10px;
-}
-
-.description p {
-    margin: 0;
 }
 
 /* Estilos para mostrar la descripción completa al hacer click en el botón */
@@ -572,3 +552,59 @@ footer {
     transform: scale(1.2);
 }
 /* fin boton para regresar */
+/*Historia*/
+.historia {
+    background-color: #202020;
+    color:white;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    padding: 20px;
+}
+
+.historia h1{
+    color: #FFC221;
+    margin-bottom: 1cm;
+}
+
+.imagenhistoria img{
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    border-radius: 100px;
+
+}
+
+.historiadesc {
+    text-align: justify;
+  }
+
+  .historiadesc p:nth-child(2) {
+    text-align: right;
+  }
+
+
+/*Fin Historia*/
+
+/*Acerca de*/
+.acerca {
+    background-color: #202020;
+    color:white;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    padding: 20px;
+}
+
+.acerca h1{
+    color: #FFC221;
+    margin-bottom: 1cm;
+}
+
+.imagenacerca img{
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    border-radius: 70px;
+
+}
+
+/*Fin Acerca de*/

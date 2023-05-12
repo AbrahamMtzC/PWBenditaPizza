@@ -26,11 +26,12 @@
 <body>
     <nav class="sidebar">
         <ul>
-            <li><a href="#"><i class="fas fa-bars"></i><span>Categorias</span></a></li>   
-            <li><a href="#"><i class="fas fa-bars"></i><span>Menú</span></a></li>
-            <li><a href="#"><i class="fas fa-images"></i><span>Imagenes</span></a></li>
+            <li><div class="logo"><img src="../img/altlogo.png" alt="Bendita Pizza" width="70"></div></li>
+            <li><a href="#"><i class="fas fa-bars"></i><span>Categorias Menú</span></a></li>   
+            <li><a href="#"><i class="fas fa-bars"></i><span>Menú de Platillos</span></a></li>
+            <li><a href="#"><i class="fas fa-images"></i><span>Imagenes/Fotos</span></a></li>
             <li><a href="#"><i class="fas fa-edit"></i><span>Editor de textos</span></a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt"></i><span>Cerrar sesión</span></a></li>
+            <li><a href="../index.html"><i class="fas fa-sign-out-alt"></i><span>Cerrar sesión</span></a></li>
         </ul>
     </nav>
     <div class="cont">

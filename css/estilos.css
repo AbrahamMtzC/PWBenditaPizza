@@ -558,12 +558,15 @@ footer {
     color:white;
     font-family: "Poppins", sans-serif;
     display: flex;
+    align-items: center;
     padding: 20px;
 }
 
 .historia h1{
     color: #FFC221;
-    margin-bottom: 1cm;
+    font-size: 60px;
+    margin-bottom: 10px;
+    text-align: right;
 }
 
 .imagenhistoria img{
@@ -574,14 +577,13 @@ footer {
 
 }
 
-.historiadesc {
-    text-align: justify;
-  }
+.imagenhistoria:hover{
+    transform: scale(1.05);
+}
 
-  .historiadesc p:nth-child(2) {
+.historiadesc p{
     text-align: right;
-  }
-
+}
 
 /*Fin Historia*/
 
@@ -591,20 +593,35 @@ footer {
     color:white;
     font-family: "Poppins", sans-serif;
     display: flex;
-    padding: 20px;
+    align-items: center;
+    padding: 15px;
 }
 
 .acerca h1{
     color: #FFC221;
-    margin-bottom: 1cm;
+    font-size: 60px;
+    margin-bottom: 10px;
 }
 
+.acercadesc {
+    justify-content: center;
+    text-align: center;
+}
+
+.acercadesc p{
+    font-size: 25px;
+    margin: 0px 10px;
+} 
+
 .imagenacerca img{
-    width: 500px;
+    width: 600px;
     height: auto;
     padding: 20px;
     border-radius: 70px;
+}
 
+.imagenacerca:hover{
+    transform: scale(1.05);
 }
 
 /*Fin Acerca de*/

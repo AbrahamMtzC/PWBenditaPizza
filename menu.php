@@ -96,8 +96,8 @@
                 <h2>Explora</h2>
                 <ul>
                     <li><a href="noticias.html">Blog de noticias</a></li>
-                    <li><a href="#">Acerca de nosotros</a></li>
-                    <li><a href="#">Historia</a></li>
+                    <li><a href="acerca.html">Acerca de nosotros</a></li>
+                    <li><a href="historia.html">Historia</a></li>
                 </ul>
             </div>
             <div class="columna-footer">
@@ -118,7 +118,7 @@
         <div class="footicons">
             <a href="https://www.facebook.com/BenditaPizzaDgo" target="_blank"><i class="fa-brands fa-facebook footicon"></i></a>
             <a href="https://www.instagram.com/benditapizzadgo/?hl=es" target="_blank"><i class="fa-brands fa-instagram footicon"></i></a>
-            <a href=""><i class="fa-brands fa-whatsapp footicon"></i></a>
+            <a href="reservar.html"><i class="fa-brands fa-whatsapp footicon"></i></a>
         </div>
     </footer>
     <!-- boton para regresar -->

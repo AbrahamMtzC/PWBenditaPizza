@@ -410,6 +410,72 @@ footer {
 }
 
 /* fin galeria de fotos */
+/* noticias */
+.newsfeed-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #2D2D2D;
+    font-family: "Poppins", sans-serif;
+}
+  
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    padding: 20px;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+.news-item h3 {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px 0;
+    color: white;
+}
+
+.show-more-btn {
+    background-color: #FFC221;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.show-more-btn:hover {
+    color: white;
+    background-color: transparent;
+    border: 2px solid #FFC221;
+    font-weight: bold;
+}
+
+.description {
+    display: none;
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.description p {
+    margin: 0;
+}
+
+/* Estilos para mostrar la descripción completa al hacer click en el botón */
+.news-item.active .description {
+    display: block;
+}
+/* fin noticias */
 /* sucursales */
 .reservar {
     background-color: black;
@@ -503,5 +569,6 @@ footer {
 
 #btnRegresar:hover{
     color: white;
+    transform: scale(1.2);
 }
 /* fin boton para regresar */

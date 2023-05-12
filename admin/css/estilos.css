@@ -1,3 +1,16 @@
+/* Fuentes de Bendita Pizza */
+@font-face {
+    font-family: 'FuturaBK';
+    src: url(fonts/FutuBK.ttf);
+}
+
+@font-face {
+    src: url("../fonts/poppins.ttf");
+    font-family: "Poppins";
+}
+
+/* Fin Fuentes de Bendita Pizza */
+
 .cont {
     margin-left: 100px;
 }
@@ -62,11 +75,12 @@
   
 .sidebar li:hover span {
     display: block;
-    left: 60px;
+    left: 80px;
 }
 
 /* fin barra de navegación admin */
 
+/* 
 .titulo {
     text-align: center;
 }
@@ -103,20 +117,9 @@
 .fa.fa-trash {
     color: #FFC221;
     font-size: xx-large;
-}
+} */
 
-/* Fuentes de Bendita Pizza */
-@font-face {
-    font-family: 'FuturaBK';
-    src: url(fonts/FutuBK.ttf);
-}
 
-@font-face {
-    src: url("../fonts/poppins.ttf");
-    font-family: "Poppins";
-}
-
-/* Fin Fuentes de Bendita Pizza */
 /* Sign in */
 .formIniciar{
     background-color: #505050;

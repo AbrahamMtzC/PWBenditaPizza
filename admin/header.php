@@ -17,10 +17,11 @@
         <link rel="stylesheet" href="css/estilos.css">
     </head>
 <body>
+</div>
     <nav class="sidebar">
         <ul>
             <li><div class="logo"><img src="../img/altlogo.png" alt="Bendita Pizza" width="70"></div></li>
-            <li><a href="#"> <i class="fa-solid fa-user"></i> <span>Usuarios</span></a></li>   
+            <li><a href="usuarios.php"> <i class="fa-solid fa-user"></i> <span>Usuarios</span></a></li>   
             <li><a href="categorias.php"> <i class="fas fa-bars"></i> <span>Categorías</span></a></li>
             <li><a href="#"> <i class="fa-solid fa-utensils"></i> <span>Productos</span></a></li>
             <li><a href="#"> <i class="fa-solid fa-newspaper"></i> <span>Noticias</span></a></li>

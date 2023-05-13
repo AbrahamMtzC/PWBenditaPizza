@@ -4,7 +4,7 @@
 ?>
 <div class="catego">
     <div>
-        <h2>Categorías</h2>
+        <h2>Usuarios</h2>
         <table class="contTabla">
             <thead>
             <tr>

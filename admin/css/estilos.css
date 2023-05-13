@@ -10,11 +10,13 @@
 }
 
 /* Fin Fuentes de Bendita Pizza */
-
 .cont {
     margin-left: 100px;
 }
 
+body {
+    background-image: linear-gradient(60deg, #FFC221, #919191);
+}
 /* barra de navegacion admin */
 .sidebar {
     position: fixed;
@@ -79,6 +81,116 @@
 }
 
 /* fin barra de navegación admin */
+/* categorias */
+
+.contTabla {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.15);
+}
+
+.contTabla thead {
+    background-color: #FFC221;
+    color: black;
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contTabla th,
+.contTabla td {
+    padding: 12px 15px;
+}
+
+.contTabla tbody tr {
+    border-bottom: 1px solid white;
+}
+
+.contTabla tbody tr:nth-of-type(odd){
+    background-color: rgb(255, 250, 243);
+}
+
+.contTabla tbody tr:nth-of-type(even){
+    background-color: bisque;
+}
+
+.contTabla tbody tr:last-of-type {
+    border-bottom: 2px solid #FFC221;
+}
+
+.catego {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.catego h2 {
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.formAgregar {
+    background-color: #262626;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.15);
+}
+
+.formAgregar td {
+    font-size: 18px;
+}
+
+.formAgregar input[type="text"] {
+    border: 1px solid #848484;
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.formAgregar input[type="submit"] {
+    background-color: #FFC221;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formAgregar input[type="submit"]:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #FFC221;
+}
+  
+.formAgregar th, td {
+    padding: 5px;
+}
+
+.fa-regular, .fa-sharp {
+    color: #FFC221;
+    font-size: xx-large;
+}
+
+.fa-regular:hover, 
+.fa-sharp:hover {
+    color: #F57C00;
+    transform: scale(1.2);
+}
+
+/* fin categorias */
+
 
 /* 
 .titulo {

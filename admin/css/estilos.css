@@ -148,6 +148,7 @@ body {
 
 .formAgregar td {
     font-size: 18px;
+    color: white;
 }
 
 .formAgregar input[type="text"] {

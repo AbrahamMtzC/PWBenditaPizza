@@ -48,7 +48,7 @@
         <form method="POST" action="altaProd.php">
             <table>
                 <tr>
-                    <td>Nombre de la Categoría</td>
+                    <td>Nombre de la Categoría:</td>
                     <td><input type="text" name="catNom"></td>
                 </tr>
                 <tr>

@@ -125,13 +125,13 @@ body {
 
 .catego {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .catego h2 {
-    padding-top: 20px;
+    padding: 20px 10px 10px 10px;
     font-weight: bold;
     text-align: center;
     color: white;
@@ -141,6 +141,7 @@ body {
     background-color: #262626;
     color: white;
     border: 1px solid #ccc;
+    margin: 25px 10px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 28px rgba(0, 0, 0, 0.15);
@@ -191,48 +192,6 @@ body {
 }
 
 /* fin categorias */
-
-
-/* 
-.titulo {
-    text-align: center;
-}
-
-.tablamenu {
-    width: 90%;
-    font-size: 20px;
-    margin: 0 auto;
-}
-
-.tablamenu thead th {
-    background-color: #FFC221;
-    color: black;
-    text-align: center;
-    border: 1px solid black;
-}
-
-.tablamenu tbody td {
-    text-align: center;
-    padding: 16px;
-    border: 1px solid black;
-}
-
-.tablamenu tbody td img {
-    max-width: 150px;
-    max-height: 150px;
-}
-
-.fa.fa-pencil-square-o {
-    color: #FFC221;
-    font-size: xx-large;
-}
-
-.fa.fa-trash {
-    color: #FFC221;
-    font-size: xx-large;
-} */
-
-
 /* Sign in */
 .formIniciar{
     background-color: #505050;
@@ -319,3 +278,20 @@ input[type='submit']:hover {
     transform: scale(1.2);
 }
 /* fin sign in */
+/* Custom scrollbar */
+::-webkit-scrollbar { /* width */
+    width: 8px;
+}
+    
+::-webkit-scrollbar-track { /* Track */
+    background: black;
+}
+    
+::-webkit-scrollbar-thumb { /* Handle */
+    background: #FFC221;
+}
+    
+::-webkit-scrollbar-thumb:hover { /* Handle on hover */
+    background: #555;
+}
+/* fin custom scrollbar */

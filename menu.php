@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+    <div id="preloader"> <img src="img/benditaloading.gif" alt=""></div>
     <header>
 		<nav class="barra">
             <div class="logo">

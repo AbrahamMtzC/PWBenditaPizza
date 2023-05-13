@@ -552,6 +552,22 @@ footer {
     transform: scale(1.2);
 }
 /* fin boton para regresar */
+/* preloader */
+#preloader {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+#preloader img {
+    height: 30%;
+    width: auto;
+}
+/* fin preloader */
 /*Historia*/
 .historia {
     background-color: #202020;

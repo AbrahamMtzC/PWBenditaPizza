@@ -16,3 +16,9 @@ function topFunction() { //Cuando el usuario haga click en el botón, se regrear
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 //Fin Botón Regresar
+//Prelaoder
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function(){
+    loader.style.display="none";
+});
+//Fin preloader

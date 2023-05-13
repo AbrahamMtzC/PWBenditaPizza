@@ -36,7 +36,7 @@
     </div> 
     <!-- insertar -->
     <div class="formAgregar">
-        <h2> Agregar una Nueva Usuario </h2>
+        <h2> Agregar un Nuevo Usuario </h2>
         <form method="POST" action="altaUser.php">
             <table>
                 <tr>

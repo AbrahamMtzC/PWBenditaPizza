@@ -1,6 +1,10 @@
 <?php
     include("../js/conexion.php");
     include("header.php");
+    $stmt = $conn->prepare("SELECT * FROM administrador");
+    $stmt->execute();
+    $administrador = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    include("header.php");
 ?>
 <div class="catego">
     <div>
@@ -9,28 +13,28 @@
             <thead>
             <tr>
                 <th>Usuario</th>
-                <th>Clave</th>
                 <th>Email</th>
                 <th>Modificar</th>
                 <th>Borrar</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Karen Rivas</td>
-                <td>Bendiciondepizzas06</td>
-                <td>Karen_Rivas00@gmail.com</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>Jesús Ruiz</td>
-                <td>nuggetdepollo04</td>
-                <td>Jesus_R1234@gmail.com</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-           
+            <?php foreach ($administrador as $admin): ?>
+                    <tr>
+                        <td><?php echo $admin['usuario']; ?></td>
+                        <td><?php echo $admin['email']; ?></td>
+                        <td>
+                            <a href="editUser.php?id=<?php echo $admin['id']; ?>"> 
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="elimUser.php?id=<?php echo $admin['id']; ?>" onclick="return confirm('¿Está seguro de que desea eliminar este usuario?')">
+                                <i class="fa-sharp fa-solid fa-trash"></i> 
+                            </a>
+                        </td>
+                    </tr>
+            <?php endforeach; ?>
             <tbody>
         </table>
     </div> 
@@ -41,15 +45,15 @@
             <table>
                 <tr>
                     <td>Nombre de usuario:</td>
-                    <td><input type="text" name="NomUser"></td>
+                    <td><input type="text" name="nomUser"  placeholder="Usuario123"></td>
                 </tr>
                 <tr>
                     <td>Contraseña:</td>
-                    <td><input type="text" name="ContraUser"></td>
+                    <td><input type="password" name="contraUser"  placeholder="••••••••••"></td>
                 </tr>
                 <tr>
                     <td>Correo:</td>
-                    <td><input type="text" name="CorreoUser"></td>
+                    <td><input type="email" name="correoUser" placeholder="info@correo.com"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Ingresar Usuario"></td>

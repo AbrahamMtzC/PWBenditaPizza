@@ -1,3 +1,11 @@
+<?php 
+    include "js/conexion.php";
+
+    $stmt = $conn->prepare("SELECT * FROM fotos");
+    $stmt->execute();
+    $fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -28,7 +36,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="menu.php">Menú</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="fotos.html">Fotos</a></li>
+                <li><a href="fotos.php">Fotos</a></li>
                 <li><a href="reservar.html" class="bt-reservar">Reservar</a></li>
             </ul>
 		</nav>
@@ -36,42 +44,15 @@
     <main>
         <div class="separador"></div>
         <!-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-        <div class="elfsight-app-84f07018-0802-4acb-89b7-e57a6c120c65"></div>
+        <div class="elfsight-app-84f07018-0802-4acb-89b7-e57a6c120c65"></div> -->
 
-        <figure data-behold-id="m1pkiDT35MRDjg1lLGPD"></figure>
-        <script src="https://w.behold.so/widget.js" type="module"></script> -->
         <div class="mosaico">
             <div class="grid-wrapper">
-                <div><img src="img/Fotos/1.jpg" alt=""></div>
-                <div><img src="img/Fotos/2.jpg" alt=""></div>
-                <div><img src="img/Fotos/3.jpg" alt=""></div>
-                <div><img src="img/Fotos/4.jpg" alt=""></div>
-                <div><img src="img/Fotos/5.jpg" alt=""></div>
-                <div><img src="img/Fotos/6.jpg" alt=""></div>
-                <div><img src="img/Fotos/7.jpg" alt=""></div>
-                <div><img src="img/Fotos/8.jpg" alt=""></div>
-                <div><img src="img/Fotos/9.jpg" alt=""></div>
-                <div><img src="img/Fotos/10.jpg" alt=""></div>
-                <div><img src="img/Fotos/11.jpg" alt=""></div>
-                <div><img src="img/Fotos/12.jpg" alt=""></div>
-                <div><img src="img/Fotos/13.jpg" alt=""></div>
-                <div><img src="img/Fotos/14.jpg" alt=""></div>
-                <div><img src="img/Fotos/15.jpg" alt=""></div>
-                <div><img src="img/Fotos/16.jpg" alt=""></div>
-                <div><img src="img/Fotos/17.jpg" alt=""></div>
-                <div><img src="img/Fotos/18.jpg" alt=""></div>
-                <div><img src="img/Fotos/19.jpg" alt=""></div>
-                <div><img src="img/Fotos/20.jpg" alt=""></div>
-                <div><img src="img/Fotos/21.jpg" alt=""></div>
-                <div><img src="img/Fotos/22.jpg" alt=""></div>
-                <div><img src="img/Fotos/23.jpg" alt=""></div>
-                <div><img src="img/Fotos/24.jpg" alt=""></div>
-                <div><img src="img/Fotos/25.jpg" alt=""></div>
-                <div><img src="img/Fotos/26.jpg" alt=""></div>
-                <div><img src="img/Fotos/27.jpg" alt=""></div>
-                <div><img src="img/Fotos/28.jpg" alt=""></div>
-                <div><img src="img/Fotos/29.jpg" alt=""></div>
-                <div><img src="img/Fotos/30.jpg" alt=""></div>
+                <?php foreach ($fotos as $fot): ?>
+                    <div>
+                        <img src="<?php echo substr($fot['foto'], 3); ?>" alt="<?php echo $fot['titulo']; ?>">
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="separador"></div>
@@ -123,3 +104,7 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
+<?php
+    $conn = null;
+?>

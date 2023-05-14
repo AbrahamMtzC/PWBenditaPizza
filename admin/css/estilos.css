@@ -28,12 +28,12 @@ body {
 .sidebar:hover {
     width: 200px;
 }
-  
+
 .sidebar ul {
     list-style: none;
     padding: 0;
 }
-  
+
 .sidebar li {
     position: relative;
 }
@@ -53,18 +53,18 @@ body {
     align-items: center;
     margin: 30px 0px;
 }
-  
+
 .sidebar a:hover {
     background-color: #FFC221;
     justify-content: space-between;
     color: black;
 }
-  
+
 .sidebar i {
     font-size: 24px;
     padding: 20px;
 }
-  
+
 .sidebar span {
     display: none;
     position: absolute;
@@ -74,7 +74,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
 }
-  
+
 .sidebar li:hover span {
     display: block;
     left: 80px;
@@ -82,7 +82,6 @@ body {
 
 /* fin barra de navegación admin */
 /* categorias */
-
 .contTabla {
     border-collapse: collapse;
     margin: 25px 0;
@@ -131,6 +130,7 @@ body {
 }
 
 .catego h2 {
+    font-family: "Poppins", sans-serif;
     padding: 20px 10px 10px 10px;
     font-weight: bold;
     text-align: center;
@@ -147,35 +147,41 @@ body {
     box-shadow: 0 0 28px rgba(0, 0, 0, 0.15);
 }
 
+.fmodif{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 0px;
+}
+
+.formModificar {
+    transform: scale(1.1);
+    background-color: #262626;
+    color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.15);
+}
+
+.formModificar td {
+    font-size: 18px;
+    color: white;
+}
+
+.fmodif h2 {
+    font-family: "Poppins", sans-serif;
+    padding: 20px 10px 10px 10px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
 .formAgregar td {
     font-size: 18px;
     color: white;
 }
 
-.formAgregar input[type="text"] {
-    border: 1px solid #848484;
-    border-radius: 3px;
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-
-.formAgregar input[type="submit"] {
-    background-color: #FFC221;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.formAgregar input[type="submit"]:hover {
-    background-color: transparent;
-    color: white;
-    border: 2px solid #FFC221;
-}
-  
 .formAgregar th, td {
     padding: 5px;
 }
@@ -189,6 +195,11 @@ body {
 .fa-sharp:hover {
     color: #F57C00;
     transform: scale(1.2);
+}
+
+.contTabla img {
+    width: 150px;
+    height: auto;
 }
 
 /* fin categorias */
@@ -219,7 +230,7 @@ body {
     transform: scale(1.1);
 }
 
-input[type='email'], input[type='password'] {
+input[type='email'], input[type='password'], input[type='text'] {
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
@@ -229,7 +240,7 @@ input[type='email'], input[type='password'] {
     box-sizing: border-box;
 }
 
-input[type='email']:focus, input[type='password']:focus {
+input[type='email']:focus, input[type='password']:focus, input[type='text']:focus {
     background-color: #fff;
     border: 2px solid #FFC221;
     outline: none;
@@ -276,6 +287,10 @@ input[type='submit']:hover {
 #btnSalir:hover{
     color: white;
     transform: scale(1.2);
+}
+
+.alert {
+    margin-top: 10px;
 }
 /* fin sign in */
 /* Custom scrollbar */

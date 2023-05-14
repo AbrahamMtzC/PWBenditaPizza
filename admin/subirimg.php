@@ -1,6 +1,6 @@
 <?php
     $archivo = $_FILES['img']['name'];
-    $url="../img/platillos";
+    $url="../img/Fotos";
     if(isset($archivo) && $archivo != "") {
         $tipo = $_FILES['img']['type'];
         $tamano = $_FILES['img']['size'];
@@ -20,5 +20,5 @@
         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
         }
     }
- }
+    }
 ?>

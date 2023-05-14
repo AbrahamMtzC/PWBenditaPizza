@@ -1,44 +1,36 @@
-<?php 
-    include "header.php";
-
+<?php
     if(!isset($_GET['id'])){
-        header('Location: menu.php');
+        header('Location: categorias.php');
     }
-
     include "../js/conexion.php";
     $id = $_GET['id'];
-    $stmt = $conn->prepare("SELECT * FROM menu WHERE id = ?;");
+    $stmt = $conn->prepare("SELECT * FROM categorias WHERE id = ?;");
     $stmt->execute([$id]);
-    $platillo = $stmt->fetch(PDO::FETCH_OBJ);
+    $categorias = $stmt->fetch(PDO::FETCH_OBJ);
+    include "header.php";
 ?>
 
-<hr>
-<h3> Editar platillos: </h3>
-<form method="POST" action="editarProceso.php">
-    <table>
-        <tr>
-            <td>Nombre</td>
-            <td><input type="text" name="txt2Nombre" value="<?php echo $platillo->nombre ?>"></td>
-        </tr>
-        <tr>
-            <td>Descripcion</td>
-            <td><input type="text" name="txt2Descripcion" value="<?php echo $platillo->descripcion ?>"></td>
-        </tr>
-        <tr>
-            <td>Precio</td>
-            <td><input type="text" name="txt2Precio" value="<?php echo $platillo->precio ?>"></td>
-        </tr>
-        <tr>
-            <td>Foto</td>
-            <td><input type="text" name="txt2Foto" value="<?php echo $platillo->foto ?>"></td>
-        </tr>
-        <tr>
-            <input type="hidden" name= "id2" value="<?php echo $platillo->id ?>">
-            <td><input type="submit" value="EDITAR PLATILLO"></td>
-        </tr>
-    </table>
-</form>
-
+<div class="fmodif">
+    <!-- Modificar -->
+    <div class="formModificar">
+        <h2> Editar Categoría <?php echo $categorias->nombre ?></h2>
+        <form method="POST" action="editCatP.php">
+            <table>
+                <tr>
+                    <td>Nombre de la Categoría:</td>
+                    <td><input type="text" name="cat2Nom" value="<?php echo $categorias->nombre ?>"></td>
+                </tr>
+                <tr>
+                    <input type="hidden" name= "id2" value="<?php echo $categorias->id ?>">
+                    <td><input type="submit" value="Modificar Categoría"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- Fin Modificar -->
+</div>
+<a href="categorias.php" id="btnSalir"> <i class="fa-solid fa-xmark"></i> </a>
 <?php
+    include("footer.php");
     $conn = null;
 ?>

@@ -36,7 +36,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="menu.php">Menú</a></li>
                 <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="fotos.html">Fotos</a></li>
+                <li><a href="fotos.php">Fotos</a></li>
                 <li><a href="reservar.html" class="bt-reservar">Reservar</a></li>
             </ul>
 		</nav>

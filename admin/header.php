@@ -1,3 +1,6 @@
+<?php
+    include "seguridad.php";
+?>
 <!DOCTYPE html>
     <html lang="es-MX">
     <head>
@@ -26,7 +29,7 @@
             <li><a href="productos.php"> <i class="fa-solid fa-utensils"></i> <span>Productos</span></a></li>
             <li><a href="noticias.php"> <i class="fa-solid fa-newspaper"></i> <span>Noticias</span></a></li>
             <li><a href="fotos.php"> <i class="fa-solid fa-image"></i> <span>Fotos</span></a></li>
-            <li><a href="../index.html"> <i class="fa-solid fa-right-from-bracket"></i> <span>Salir</span></a></li>
+            <li><a href="salir.php"> <i class="fa-solid fa-right-from-bracket"></i> <span>Salir</span></a></li>
         </ul>
     </nav>
     <div class="cont">

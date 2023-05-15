@@ -1,5 +1,8 @@
 <?php
     include("../js/conexion.php");
+    $stmt = $conn->prepare("SELECT * FROM productos");
+    $stmt->execute();
+    $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     include("header.php");
 ?>
 <div class="catego">
@@ -8,7 +11,7 @@
         <table class="contTabla">
             <thead>
             <tr>
-                <th>ID</th>
+
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>
@@ -19,113 +22,74 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Bendita</td>
-                <td>Pepperoni + jamón + tocino + champiñones</td>
-                <td>$ 295 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Meat Lovers</td>
-                <td>Pepperoni + Salchicha Italiana + Tocino + Salami</td>
-                <td>$ 315 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Italiana</td>
-                <td>Salchicha Italiana + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</td>
-                <td>$ 285 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Veggie</td>
-                <td>Requesón + Espinaca + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</td>
-                <td>$ 285 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Bendita</td>
-                <td>Pepperoni + jamón + tocino + champiñones</td>
-                <td>$ 295 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Meat Lovers</td>
-                <td>Pepperoni + Salchicha Italiana + Tocino + Salami</td>
-                <td>$ 315 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Italiana</td>
-                <td>Salchicha Italiana + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</td>
-                <td>$ 285 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Veggie</td>
-                <td>Requesón + Espinaca + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</td>
-                <td>$ 285 MX</td>
-                <td><img src="" alt=""></td>
-                <td>Chicago Style</td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
+            <?php foreach ($productos as $prod): ?>
+                <tr>
+                    <td> <?php echo $prod['nombre']; ?> </td>
+                    <td> <?php echo $prod['descripcion']; ?> </td>
+                    <td>$<?php echo $prod['precio']; ?>MX</td>
+                    <td><img src="<?php echo $prod['foto']; ?>" alt="<?php echo $prod['nombre']; ?>"></td>
+                    <td>
+                        <?php
+                            $stmt2 = $conn->prepare("SELECT * FROM categorias WHERE id = " . $prod['idCat']);
+                            $stmt2->execute();
+                            $categoria = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                            if(count($categoria) > 0) { // Verificamos si hay al menos una fila en el resultado
+                                echo $categoria[0]['nombre']; // Si hay al menos una fila, accedemos al campo "nombre" de la primera fila y lo imprimimos
+                            } else {
+                                echo "Categoría no encontrada"; // Si no hay filas en el resultado, imprimimos un mensaje de error
+                            }
+                        ?>
+                    </td>
+                    <td>
+                        <a href="editProd.php?id=<?php echo $prod['id']; ?>"> 
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="elimProd.php?id=<?php echo $prod['id']; ?>" onclick="return confirm('¿Está seguro de que desea eliminar este producto?')">
+                            <i class="fa-sharp fa-solid fa-trash"></i> 
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
             <tbody>
         </table>
     </div> 
     <!-- insertar -->
     <div class="formAgregar">
         <h2> Agregar un Nuevo Producto </h2>
-        <form method="POST" action="altaProd.php">
+        <form method="POST" action="altaProd.php" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>Nombre del Producto: </td>
-                    <td><input type="text" name="prodNom"></td>
+                    <td><input class="form-control" type="text" name="prodNom"  placeholder="Ensalada diosa"></td>
                 </tr>
                 <tr>
                     <td>Descripción del Producto: </td>
-                    <td><input type="text" name="prodDesc"></td>
+                    <td><textarea class="form-control" name="prodDesc" rows="5" cols="40"  placeholder="Mezcla de lechugas + espinaca + jamón"></textarea></td>
                 </tr>
                 <tr>
                     <td>Precio del Producto: </td>
-                    <td><input type="text" name="prodPrc"></td>
+                    <td><input class="form-control" type="number" name="prodPrc" placeholder="105"></td>
                 </tr>
                 <tr>
                     <td>Foto del Producto: </td>
-                    <td><input type="text" name="prodFoto"></td>
+                    <td><input class="form-control" type="file" name="img"></td>
                 </tr>
                 <tr>
                     <td>Categoría del Producto: </td>
-                    <td><input type="text" name="prodCat"></td>
+                    <td>
+                        <select class="form-control" type="text" name="prodCat">
+                            <?php
+                                $stmt3 = $conn->prepare("SELECT * FROM categorias");
+                                $stmt3->execute();
+                                $categorias = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($categorias as $cate):
+                            ?>
+                                <option value="<?php echo $cate['id']; ?>"> <?php echo $cate['nombre']; ?> </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Ingresar Producto"></td>

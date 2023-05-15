@@ -1,6 +1,5 @@
 <?php
     include("../js/conexion.php");
-    include("header.php");
     $stmt = $conn->prepare("SELECT * FROM administrador");
     $stmt->execute();
     $administrador = $stmt->fetchAll(PDO::FETCH_ASSOC);

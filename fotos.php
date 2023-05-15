@@ -1,7 +1,7 @@
 <?php 
     include "js/conexion.php";
 
-    $stmt = $conn->prepare("SELECT * FROM fotos");
+    $stmt = $conn->prepare("SELECT * FROM fotos ORDER BY id DESC");
     $stmt->execute();
     $fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -27,6 +27,13 @@
 </head>
 <body>
     <div id="preloader"> <img src="img/benditaloading.gif" alt=""></div>
+    <div class="icoderecha">
+        <ul>
+            <li> <a href="https://www.facebook.com/BenditaPizzaDgo" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li> <a href="https://www.instagram.com/benditapizzadgo/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li> <a href="reservar.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+    </div>
     <header>
 		<nav class="barra">
             <div class="logo">
@@ -35,7 +42,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="menu.php">Menú</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="noticias.php">Noticias</a></li>
                 <li><a href="fotos.php">Fotos</a></li>
                 <li><a href="reservar.html" class="bt-reservar">Reservar</a></li>
             </ul>
@@ -71,7 +78,7 @@
             <div class="columna-footer">
                 <h2>Explora</h2>
                 <ul>
-                    <li><a href="noticias.html">Blog de noticias</a></li>
+                    <li><a href="noticias.php">Blog de noticias</a></li>
                     <li><a href="acerca.html">Acerca de nosotros</a></li>
                     <li><a href="historia.html">Historia</a></li>
                 </ul>

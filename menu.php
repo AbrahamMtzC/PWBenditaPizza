@@ -1,9 +1,8 @@
 <?php 
     include "js/conexion.php";
-
-    $stmt = $conn->prepare("SELECT * FROM menu");
+    $stmt = $conn->prepare("SELECT * FROM productos");
     $stmt->execute();
-    $menu = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +26,13 @@
 </head>
 <body>
     <div id="preloader"> <img src="img/benditaloading.gif" alt=""></div>
+    <div class="icoderecha">
+        <ul>
+            <li> <a href="https://www.facebook.com/BenditaPizzaDgo" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li> <a href="https://www.instagram.com/benditapizzadgo/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li> <a href="reservar.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+    </div>
     <header>
 		<nav class="barra">
             <div class="logo">
@@ -35,7 +41,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="menu.php">Menú</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="noticias.php">Noticias</a></li>
                 <li><a href="fotos.php">Fotos</a></li>
                 <li><a href="reservar.html" class="bt-reservar">Reservar</a></li>
             </ul>
@@ -44,41 +50,25 @@
     <main>
         <div class="separador"></div>
         <div class="galeria">
-            <div class="contenido">
-                <img src="img/platillos/no-image.png" alt="Papas a la francesa">
-                <h3>Bendita</h3>
-                <p>Pepperoni + Jamón + Tocino + Champiñones</p>
-                <h6>$295.00</h6>
-            </div>
-            <div class="contenido">
-                <img src="img/platillos/no-image.png" alt="Agua de Pepino">
-                <h3>Meat Lovers</h3>
-                <p>Pepperoni + Salchicha Italiana + Tocino + Salami</p>
-                <h6>$315.00</h6>
-            </div>
-
-            <div class="contenido">
-                <img src="img/platillos/no-image.png" alt="Papas a la francesa">
-                <h3>Italiana</h3>
-                <p>Salchicha Italiana + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</p>
-                <h6>$285.00</h6>
-            </div>
-            <div class="contenido">
-                <img src="img/platillos/no-image.png" alt="Agua de Pepino">
-                <h3>Veggie</h3>
-                <p>Requesón + Espinaca + Morrón Verde + Champiñones + Aceitunas + Cebolla Morada</p>
-                <h6>$285.00</h6>
-            </div>
-
-            <?php foreach ($menu as $platillo): ?>
+            <?php foreach ($productos as $produ): ?>
                 <div class="contenido">
-                    <img src="<?php echo substr($platillo['foto'], 3); ?>" alt="<?php echo $platillo['nombre']; ?>">
-                    <h3> <?php echo $platillo['nombre']; ?> </h3>
-                    <p> <?php echo $platillo['descripcion']; ?> </p>
-                    <h6> $<?php echo $platillo['precio']; ?>MXN </h6>
+                    <img src="<?php echo substr($produ['foto'], 3); ?>" alt="<?php echo $produ['nombre']; ?>">
+                    <h3><?php echo $produ['nombre']; ?></h3>
+                    <p><?php echo $produ['descripcion']; ?></p>
+
+                    <?php
+                        $stmt2 = $conn->prepare("SELECT * FROM categorias WHERE id = " . $produ['idCat']);
+                        $stmt2->execute();
+                        $categoria = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                        if(count($categoria) > 0) { // Verificamos si hay al menos una fila en el resultado
+                    ?>        
+                            <h4><?php echo $categoria[0]['nombre']; ?></h4>
+                    <?php 
+                        } 
+                    ?>
+                    <h6>$<?php echo $produ['precio']; ?>MXN</h6>
                 </div>
             <?php endforeach; ?>
-
         </div>
         <div class="separador"></div>
     </main>
@@ -96,7 +86,7 @@
             <div class="columna-footer">
                 <h2>Explora</h2>
                 <ul>
-                    <li><a href="noticias.html">Blog de noticias</a></li>
+                    <li><a href="noticias.php">Blog de noticias</a></li>
                     <li><a href="acerca.html">Acerca de nosotros</a></li>
                     <li><a href="historia.html">Historia</a></li>
                 </ul>

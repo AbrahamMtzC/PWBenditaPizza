@@ -1,5 +1,8 @@
 <?php
     include("../js/conexion.php");
+    $stmt = $conn->prepare("SELECT id, nombre, descripcion, foto, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha2 FROM noticias ORDER BY fecha DESC");
+    $stmt->execute();
+    $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
     include("header.php");
 ?>
 <div class="catego">
@@ -17,46 +20,47 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>¿Ya sabes como festejar a mamá? 🍕😉</td>
-                <td> </td>
-                <td> </td>
-                <td> 26/08/23 </td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-            <tr>
-                <td>Para los amantes del mezcal, un coctel de guayaba, menta y un toque de limón, ¿Ya lo probaron? 🍹😋</td>
-                <td> </td>
-                <td> </td>
-                <td> 26/08/23 </td>
-                <td> <a href=""> <i class="fa-regular fa-pen-to-square"></i></a> </td>
-                <td> <a href=""> <i class="fa-sharp fa-solid fa-trash"></i> </a></td>
-            </tr>
-           
+            <?php foreach ($noticias as $noti): ?>
+                <tr>
+                    <td><?php echo $noti['nombre']; ?></td>
+                    <td><?php echo $noti['descripcion']; ?></td>
+                    <td><img src="<?php echo $noti['foto']; ?>"></td>
+                    <td><?php echo $noti['fecha2']; ?></td>
+                    <td>
+                        <a href="editNoti.php?id=<?php echo $noti['id']; ?>"> 
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="elimNoti.php?id=<?php echo $noti['id']; ?>" onclick="return confirm('¿Está seguro de que desea eliminar esta noticia?')">
+                            <i class="fa-sharp fa-solid fa-trash"></i> 
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
             <tbody>
         </table>
     </div> 
     <!-- insertar -->
     <div class="formAgregar">
         <h2> Agregar una Nueva Noticia </h2>
-        <form method="POST" action=".php">
+        <form method="POST" action="altaNoti.php" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>Título de la noticia:</td>
-                    <td><input type="text" name="NomUser"></td>
+                    <td><input class="form-control" type="text" name="tituNot"  placeholder="Día internacional de la pizza"></td>
                 </tr>
                 <tr>
                     <td>Descripción:</td>
-                    <td><input type="text" name="ContraUser"></td>
+                    <td><textarea class="form-control" name="descNot" rows="5" cols="40" placeholder="Disfruta de nuestras promociones."></textarea></td>
                 </tr>
                 <tr>
                     <td>Foto:</td>
-                    <td><input type="text" name="CorreoUser"></td>
+                    <td><input class="form-control" type="file" id="img" name="img"></td>
                 </tr>
                 <tr>
                     <td>Fecha</td>
-                    <td><input type="text" name="CorreoUser"></td>
+                    <td><input class="form-control" type="date" name="fechaNot"></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Agregar Noticia"></td>

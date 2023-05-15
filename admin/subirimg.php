@@ -1,6 +1,10 @@
 <?php
     $archivo = $_FILES['img']['name'];
-    $url="../img/Fotos";
+
+    // $url = $_GET['url'];
+    // $url="../img/Fotos";
+    // $url = $_POST['url'];
+
     if(isset($archivo) && $archivo != "") {
         $tipo = $_FILES['img']['type'];
         $tamano = $_FILES['img']['size'];
@@ -14,7 +18,6 @@
         if (move_uploaded_file($temp, $url.$archivo)) {
         chmod($url.$archivo, 0777);
         echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
-
     }
     else {
         echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';

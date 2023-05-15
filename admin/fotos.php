@@ -1,7 +1,6 @@
 <?php
     include("../js/conexion.php");
-    include("header.php");
-    $stmt = $conn->prepare("SELECT * FROM fotos");
+    $stmt = $conn->prepare("SELECT * FROM fotos ORDER BY id DESC");
     $stmt->execute();
     $fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     include("header.php");
@@ -46,7 +45,7 @@
             <table>
                 <tr>
                     <td>Título:</td>
-                    <td><input class="form-control" type="text" name="tituFoto"></td>
+                    <td><input class="form-control" type="text" name="tituFoto" placeholder="Chicago Style"></td>
                 </tr>
                 <tr>
                     <td>Foto:</td>

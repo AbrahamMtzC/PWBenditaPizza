@@ -1,3 +1,10 @@
+<?php 
+    include "js/conexion.php";
+    $stmt = $conn->prepare("SELECT id, nombre, descripcion, foto, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha2 FROM noticias ORDER BY fecha DESC");
+    $stmt->execute();
+    $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -19,6 +26,13 @@
 </head>
 <body>
     <div id="preloader"> <img src="img/benditaloading.gif" alt=""></div>
+    <div class="icoderecha">
+        <ul>
+            <li> <a href="https://www.facebook.com/BenditaPizzaDgo" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+            <li> <a href="https://www.instagram.com/benditapizzadgo/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li> <a href="reservar.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+        </ul>
+    </div>
     <header>
 		<nav class="barra">
             <div class="logo">
@@ -27,7 +41,7 @@
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="menu.php">Menú</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="noticias.php">Noticias</a></li>
                 <li><a href="fotos.php">Fotos</a></li>
                 <li><a href="reservar.html" class="bt-reservar">Reservar</a></li>
             </ul>
@@ -35,42 +49,15 @@
 	</header>
     <main>
         <div class="separador"></div>
-
         <div class="newsfeed-grid">
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/345925522_1694943060963111_5652696708522210081_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=Ff9lpwGp1TkAX9kyE_3&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfB1bSoYF1k7MKEXXeyLqcqHkkY1Yq_69SS7MYKY70r70w&oe=64634920" alt="News item 1">
-                <h3>¿Ya sabes como festejar a mamá? 🍕😉</h3>
-            </div>
-
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/344808022_596903675719880_1869181217864259150_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=5fsBzMZIm64AX-V2Odn&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfDMgs-_vio-oyMy5D6VPap2iOnjR43A8khNmA2Azuj3mw&oe=6462514B" alt="News item 2">
-                <h3>Para los amantes del mezcal, un coctel de guayaba, menta y un toque de limón, ¿Ya lo probaron? 🍹😋</h3>
-            </div>
-
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/343606138_3571296119768417_4632252974308181788_n.jpg?stp=dst-jpg_p526x395&_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=ns4IVF7VJMkAX_81Llr&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfB3DknBSspvRk2jqmU-bDoy2wkemnh5hCnWDx0UQ_ClOg&oe=6461D829" alt="News item 3">
-                <h3>Uno de los mejores placeres de la vida es disfrutar de una buena pasta </h3>
-            </div>
-
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/343205945_641121877843704_412885966562830326_n.jpg?stp=dst-jpg_p180x540&_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=JNih4S4YGJEAX8SyAoe&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfAL-pi1XCJKrJR1wohgqxCMFk2TVpJsSvIZxGdzuuDCtA&oe=64623ECC" alt="News item 1">
-                <h3>Pizza y helado, la  combinación perfecta para festejar a nuestros peques 😋</h3>
-            </div>
-
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/343472409_761396488772613_5515996663289242164_n.jpg?stp=dst-jpg_p180x540&_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=Z3w4m-Tf1yUAX94yYb8&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfAUK4M5qX6aHpeidO0MY-9aJhOFPqePq8rSi2UWMZd18A&oe=646390BA" alt="News item 2">
-                <h3>La mejor manera de consentir a los peques de la casa es con su comida favorita😍</h3>
-            </div>
-            
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/343416767_3560770067490801_8871928664725610560_n.jpg?stp=dst-jpg_p526x395&_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=-Cz4efJR6ZsAX8xwuED&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfA6GSJl_BwZoE5OvptKJQ9TaX3Y36xbkSTTVMkCw9uGUA&oe=64630594" alt="News item 3">
-                <h3>La mayor alegría que se siente es cuando vemos una pizza servida  🍕🤩</h3>
-            </div>
-
-            <div class="news-item">
-                <img src="https://scontent.fdgo1-1.fna.fbcdn.net/v/t39.30808-6/340770588_741495024130022_3173460591380465439_n.jpg?stp=dst-jpg_p180x540&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=iD4MVvpcuhMAX-0KgAr&_nc_ht=scontent.fdgo1-1.fna&oh=00_AfCWoq3WnaPITS-1bpZYxugbMTyGOZyhwUeLQrF34P2TaQ&oe=646346D0" alt="News item 3">
-                <h3>¿Ya conoces nuestra pizza “Tradicional Birria”?🤤</h3>
-            </div>
+            <?php foreach ($noticias as $noti): ?>
+                <div class="news-item">
+                    <img src="<?php echo substr($noti['foto'], 3); ?>" alt="<?php echo $noti['nombre']; ?>">
+                    <h3><?php echo $noti['nombre']; ?></h3>
+                    <h4><?php echo $noti['descripcion']; ?></h4>
+                    <h5><?php echo $noti['fecha2']; ?></h5>
+                </div>
+            <?php endforeach; ?>
         </div>
             
         <div class="separador"></div>
@@ -89,7 +76,7 @@
             <div class="columna-footer">
                 <h2>Explora</h2>
                 <ul>
-                    <li><a href="noticias.html">Blog de noticias</a></li>
+                    <li><a href="noticias.php">Blog de noticias</a></li>
                     <li><a href="acerca.html">Acerca de nosotros</a></li>
                     <li><a href="historia.html">Historia</a></li>
                 </ul>
@@ -122,3 +109,7 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
+<?php
+    $conn = null;
+?>

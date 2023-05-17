@@ -7,7 +7,7 @@
 ?>
 <div class="catego">
     <div>
-        <h2>Usuarios</h2>
+        <h2>Usuarios Administradores</h2>
         <table class="contTabla">
             <thead>
             <tr>

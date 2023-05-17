@@ -56,7 +56,7 @@
         </table>
     </div> 
     <!-- insertar -->
-    <div class="formAgregar">
+    <div class="formAgregar hoverEffect">
         <h2> Agregar un Nuevo Producto </h2>
         <form method="POST" action="altaProd.php" enctype="multipart/form-data">
             <table>

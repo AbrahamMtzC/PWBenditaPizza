@@ -22,3 +22,17 @@ window.addEventListener("load", function(){
     loader.style.display="none";
 });
 //Fin preloader
+//Menu hamburguesa
+const hamburguesa = document.querySelector(".hamburguesa");
+const menu = document.querySelector(".barra ul");
+
+hamburguesa.addEventListener("click", () => {
+    hamburguesa.classList.toggle("active");
+    menu.classList.toggle("active");
+})
+
+document.querySelectorAll(".barra ul li a").forEach(n => n.addEventListener("click", () => {
+    hamburguesa.classList.remove("active");
+    menu.classList.remove("active");
+}));
+//Fin menu hamburguesa

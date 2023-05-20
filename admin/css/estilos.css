@@ -154,6 +154,14 @@ body {
     flex-direction: column;
 }
 
+.notiForm {
+    height: 540px;
+}
+
+.produForm {
+    height: 640px;
+}
+
 .hoverEffect:hover,
 .hoverEffect:focus {
     transform: translateX(-10px);

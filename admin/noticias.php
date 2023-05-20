@@ -42,7 +42,7 @@
         </table>
     </div> 
     <!-- insertar -->
-    <div class="formAgregar hoverEffect">
+    <div class="formAgregar hoverEffect notiForm">
         <h2> Agregar una Nueva Noticia </h2>
         <form method="POST" action="altaNoti.php" enctype="multipart/form-data">
             <table>

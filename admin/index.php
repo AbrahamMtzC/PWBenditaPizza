@@ -18,6 +18,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/0e1cd44541.js" crossorigin="anonymous"></script>
+    <!-- Google recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Estilos -->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="../css/estilos.css">
@@ -25,25 +27,35 @@
 <body class="formIniciar">
     <div class="register">
         <img class="site_logo" src="../img/logotipo.png" alt="Logo de Bendita Pizza">
-        
+        <h1>Iniciar Sesión</h1>
+
         <form action="login.php" method="POST" class="form">
-            <div class="form__field">
-                <input type="text" name="user" placeholder="Nombre de Usuario">
-            </div>
-            <div class="form__field">
-                <input type="password" name="pss" placeholder="••••••••••••">
-            </div>
-            <div class="form__field">
-                <input type="submit" value="Iniciar Sesión">
+            <div class="form__container">
+                <div class="form__field">
+                    <input type="text" name="user" id="user" placeholder=" " autocomplete="off" required>
+                    <label for="user" class="form__label">Nombre de Usuario</label>
+                </div>
+                <div class="form__field">
+                    <input type="password" name="pss" id="pss" placeholder=" " required>
+                    <label for="pss" class="form__label">Contraseña</label>
+                </div>
+                <div class="form__field">
+                    <div class="g-recaptcha" data-sitekey="6LdNVUYmAAAAAPKeHGUosIt_2rP8XxyWwCwbmKk1"></div>
+                </div>
+                <div class="form__field">
+                    <input type="submit" value="Iniciar Sesión">
+                </div>
             </div>
         </form>
+
         <?php if (!empty($error)): ?>
             <div class="alert alert-danger"><?php echo $error ?></div>
         <?php endif ?>
+
         <p> <a href="usuarios.php">¿Olvidaste tu contraseña?</a> </p>
+
     </div>
 
     <a href="../index.html" id="btnSalir"> <i class="fa-solid fa-xmark"></i> </a>
-    
 </body>
 </html>

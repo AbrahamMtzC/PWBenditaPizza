@@ -442,10 +442,13 @@ footer {
     }
 }
 /* Menu */
-.galeria{
+.menu{
     font-family: 'Poppins', sans-serif;
     color: white;
     background-color: #393939;
+}
+
+.galeria{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -517,6 +520,49 @@ footer {
     .contenido{
         width: 100%;
     }
+}
+
+.selectCat{
+    display: flex;
+}
+
+.busqueda{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.busqueda .selectCat{
+    padding: 0px 10px;
+}
+
+/* .selectCat select{
+    font-size: 15px;
+    background-color: transparent;
+    color: white;
+    border-color: #FFC221;
+    transition: all 0.3s;
+} */
+
+#btnOrdenar{
+    display: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 20px;
+    font-size: 28px;
+    color: #FFC221;
+    transition: all 0.3s;
+}
+
+#btnOrdenar:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+#selectCategorias {
+    display: none;
+
 }
 
 /* fin menu */

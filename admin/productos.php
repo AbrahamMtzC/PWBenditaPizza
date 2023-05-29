@@ -11,7 +11,6 @@
         <table class="contTabla">
             <thead>
             <tr>
-
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Precio</th>

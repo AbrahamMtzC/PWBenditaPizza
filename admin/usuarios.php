@@ -44,15 +44,15 @@
             <table>
                 <tr>
                     <td>Nombre de usuario:</td>
-                    <td><input type="text" name="nomUser"  placeholder="Usuario123"></td>
+                    <td><input type="text" name="nomUser"  placeholder="Usuario123" required></td>
                 </tr>
                 <tr>
                     <td>Contraseña:</td>
-                    <td><input type="password" name="contraUser"  placeholder="••••••••••"></td>
+                    <td><input type="password" name="contraUser"  placeholder="••••••••••" required></td>
                 </tr>
                 <tr>
                     <td>Correo:</td>
-                    <td><input type="email" name="correoUser" placeholder="info@correo.com"></td>
+                    <td><input type="email" name="correoUser" placeholder="info@correo.com" required></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Ingresar Usuario"></td>

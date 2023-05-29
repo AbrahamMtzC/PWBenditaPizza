@@ -54,26 +54,53 @@
 	</header>
     <main>
         <div class="separador"></div>
-        <div class="galeria">
-            <?php foreach ($productos as $produ): ?>
-                <div class="contenido">
-                    <img src="<?php echo substr($produ['foto'], 3); ?>" alt="<?php echo $produ['nombre']; ?>">
-                    <h3><?php echo $produ['nombre']; ?></h3>
-                    <p><?php echo $produ['descripcion']; ?></p>
-
-                    <?php
-                        $stmt2 = $conn->prepare("SELECT * FROM categorias WHERE id = " . $produ['idCat']);
-                        $stmt2->execute();
-                        $categoria = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-                        if(count($categoria) > 0) { // Verificamos si hay al menos una fila en el resultado
-                    ?>        
-                            <h4><?php echo $categoria[0]['nombre']; ?></h4>
-                    <?php 
-                        } 
-                    ?>
-                    <h6>$<?php echo $produ['precio']; ?>MXN</h6>
+        
+        <div class="menu">
+            <div class="busqueda">
+                <div class="selectCat">
+                    <select class="form-control" name="select">
+                        <option disabled selected>Ordenar Por:</option>
+                        <option value="preci">Precio</option>
+                        <option value="categ">Categorías</option>
+                    </select>
+                    <button id="btnOrdenar">
+                        <i class="fa-solid fa-arrows-up-down"></i>
+                    </button>
+                    <select class="form-control" id="selectCategorias" type="text" name="prodCat">
+                        <option value="todas" selected>Todas</option>
+                            <?php
+                                $stmt3 = $conn->prepare("SELECT * FROM categorias");
+                                $stmt3->execute();
+                                $categorias = $stmt3->fetchAll(PDO::FETCH_ASSOC);
+                                foreach ($categorias as $cate):
+                            ?>
+                                <option value="<?php echo $cate['nombre']; ?>"> <?php echo $cate['nombre']; ?> </option>
+                            <?php endforeach; ?>
+                    </select>
                 </div>
-            <?php endforeach; ?>
+            </div>
+        
+            <div class="galeria" id="galeria">
+                <?php foreach ($productos as $produ): ?>
+                    <div class="contenido">
+                        <img src="<?php echo substr($produ['foto'], 3); ?>" alt="<?php echo $produ['nombre']; ?>">
+                        <h3><?php echo $produ['nombre']; ?></h3>
+                        <p><?php echo $produ['descripcion']; ?></p>
+
+                        <?php
+                            $stmt2 = $conn->prepare("SELECT * FROM categorias WHERE id = " . $produ['idCat']);
+                            $stmt2->execute();
+                            $categoria = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+                            if(count($categoria) > 0) { // Verificamos si hay al menos una fila en el resultado
+                        ?>        
+                                <h4><?php echo $categoria[0]['nombre']; ?></h4>
+                        <?php 
+                            } 
+                        ?>
+                        <h6>$<?php echo $produ['precio']; ?>MXN</h6>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
         <div class="separador"></div>
     </main>

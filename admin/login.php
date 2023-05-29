@@ -8,8 +8,8 @@
     $captcha = $_POST['g-recaptcha-response'];
     $secretkey = "6LdNVUYmAAAAALj9ydcXPmmcYKWivEmHulkSmz-Y";
 
-    $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify?
-    secret=$secretkey
+    $respuesta = file_get_contents("https://www.google.com/recaptcha/api/siteverify
+    ?secret=$secretkey
     &response=$captcha
     &remoteip=$ip");
 
@@ -17,7 +17,6 @@
 
     if(!$atributos['success']){
         header("Location: index.php?error=Verificar Captcha");
-        
     }
 
     try {

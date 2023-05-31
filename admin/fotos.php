@@ -50,7 +50,7 @@
                 <tr>
                     <td>Foto:</td>
                     <td>
-                        <input class="form-control" type="file" id="img" name="img">
+                        <input class="form-control" type="file" id="img" name="img" required>
                     </td>
                 </tr>
                 <tr>

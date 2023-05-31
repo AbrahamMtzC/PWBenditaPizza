@@ -43,7 +43,7 @@
             <table>
                 <tr>
                     <td>Nombre de la Categoría:</td>
-                    <td><input type="text" name="catNom" placeholder="Chicago Style"></td>
+                    <td><input type="text" name="catNom" placeholder="Chicago Style" required></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Ingresar Categoría"></td>

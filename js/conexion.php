@@ -1,8 +1,8 @@
 <?php
 
-$username = "adminDB_89";
+$username = "u252776350_adminDB_89";
 $password = "S3cure#dbUsr";
-$dbname = "benditapizza";
+$dbname = "u252776350_benditapizza";
 
 try {
   $conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);

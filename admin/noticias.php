@@ -48,7 +48,7 @@
             <table>
                 <tr>
                     <td>Título de la noticia:</td>
-                    <td><input class="form-control" type="text" name="tituNot"  placeholder="Día internacional de la pizza"></td>
+                    <td><input class="form-control" type="text" name="tituNot"  placeholder="Día internacional de la pizza" required></td>
                 </tr>
                 <tr>
                     <td>Descripción:</td>
@@ -56,11 +56,11 @@
                 </tr>
                 <tr>
                     <td>Foto:</td>
-                    <td><input class="form-control" type="file" id="img" name="img"></td>
+                    <td><input class="form-control" type="file" id="img" name="img" required></td>
                 </tr>
                 <tr>
                     <td>Fecha</td>
-                    <td><input class="form-control" type="date" name="fechaNot"></td>
+                    <td><input class="form-control" type="date" name="fechaNot" required></td>
                 </tr>
                 <tr>
                     <td><input type="submit" value="Agregar Noticia"></td>

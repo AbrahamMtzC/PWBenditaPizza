@@ -61,15 +61,15 @@
             <table>
                 <tr>
                     <td>Nombre del Producto: </td>
-                    <td><input class="form-control" type="text" name="prodNom"  placeholder="Ensalada diosa"></td>
+                    <td><input class="form-control" type="text" name="prodNom"  placeholder="Ensalada diosa" required></td>
                 </tr>
                 <tr>
                     <td>Descripción del Producto: </td>
-                    <td><textarea class="form-control" name="prodDesc" rows="5" cols="40"  placeholder="Mezcla de lechugas + espinaca + jamón"></textarea></td>
+                    <td><textarea class="form-control" name="prodDesc" rows="5" cols="40"  placeholder="Mezcla de lechugas + espinaca + jamón" required></textarea></td>
                 </tr>
                 <tr>
                     <td>Precio del Producto: </td>
-                    <td><input class="form-control" type="number" name="prodPrc" placeholder="105"></td>
+                    <td><input class="form-control" type="number" name="prodPrc" placeholder="105" required></td>
                 </tr>
                 <tr>
                     <td>Foto del Producto: </td>

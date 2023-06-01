@@ -8,6 +8,8 @@
     $stmt->execute([$id]);
     $noticias = $stmt->fetch(PDO::FETCH_OBJ);
     include "header.php";
+
+    $error = isset($_GET['error']) ? $_GET['error'] : "";
 ?>
 <div class="fmodif">
     <!-- Modificar -->
@@ -52,6 +54,9 @@
                 </tr>
             </table>
         </form>
+        <?php if (!empty($error)): ?>
+            <div class="alert alert-danger"><?php echo $error ?></div>
+        <?php endif ?>
     </div>
     <!-- Fin Modificar -->
 </div>

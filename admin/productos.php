@@ -4,6 +4,8 @@
     $stmt->execute();
     $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     include("header.php");
+
+    $error = isset($_GET['error']) ? $_GET['error'] : "";
 ?>
 <div class="catego">
     <div>
@@ -95,6 +97,9 @@
                 </tr>
             </table>
         </form>
+        <?php if (!empty($error)): ?>
+            <div class="alert alert-danger"><?php echo $error ?></div>
+        <?php endif ?>
     </div>
     <!-- fin insertar -->
 </div>

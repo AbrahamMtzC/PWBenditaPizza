@@ -1,6 +1,6 @@
 <?php 
     include "js/conexion.php";
-    $stmt = $conn->prepare("SELECT * FROM productos");
+    $stmt = $conn->prepare("SELECT * FROM productos ORDER BY idCat");
     $stmt->execute();
     $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -83,7 +83,7 @@
             <div class="galeria" id="galeria">
                 <?php foreach ($productos as $produ): ?>
                     <div class="contenido">
-                        <img src="<?php echo substr($produ['foto'], 3); ?>" alt="<?php echo $produ['nombre']; ?>">
+                        <img loading="lazy" src="<?php echo substr($produ['foto'], 3); ?>" alt="<?php echo $produ['nombre']; ?>">
                         <h3><?php echo $produ['nombre']; ?></h3>
                         <p><?php echo $produ['descripcion']; ?></p>
 
@@ -144,6 +144,11 @@
             <a href="reservar.html"><i class="fa-brands fa-whatsapp footicon"></i></a>
         </div>
     </footer>
+     <div class="benditaburger">
+        <a href="https://benditaburgermx.com" target="_blank">
+            <img src="img/benditaburger.png">
+        </a>
+    </div>  
     <!-- boton para regresar -->
     <button onclick="topFunction()" id="btnRegresar" title="Regresar arriba"> <i class="fa-regular fa-circle-up"></i> </button>
 

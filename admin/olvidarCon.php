@@ -1,6 +1,5 @@
 <?php
     $error = isset($_GET['error']) ? $_GET['error'] : "";
-    $msj = isset($_GET['msj']) ? $_GET['msj'] : "";
 ?>
 
 <!DOCTYPE html>
@@ -28,27 +27,19 @@
 <body class="formIniciar">
     <div class="register">
         <img class="site_logo" src="../img/logotipo.png" alt="Logo de Bendita Pizza">
-        <h1>Iniciar Sesión</h1>
-        
-        <?php if (!empty($msj)): ?>
-            <div class="alert alert-success"><?php echo $msj ?></div>
-        <?php endif ?>
+        <h1>Ayúdanos a encontrarte</h1>
 
-        <form action="login.php" method="POST" class="form">
+        <form action="contra.php" method="POST" class="form">
             <div class="form__container">
                 <div class="form__field">
-                    <input type="text" name="user" id="user" placeholder=" " autocomplete="off" required>
-                    <label for="user" class="form__label">Nombre de Usuario</label>
-                </div>
-                <div class="form__field">
-                    <input type="password" name="pss" id="pss" placeholder=" " required>
-                    <label for="pss" class="form__label">Contraseña</label>
+                    <input type="text" name="correo" id="correo" placeholder=" " autocomplete="off" required>
+                    <label for="correo" class="form__label">Correo elctrónico</label>
                 </div>
                 <div class="form__field">
                     <div class="g-recaptcha" data-sitekey="6LdNVUYmAAAAAPKeHGUosIt_2rP8XxyWwCwbmKk1"></div>
                 </div>
                 <div class="form__field">
-                    <input type="submit" value="Iniciar Sesión">
+                    <input type="submit" value="Solicitar nueva contraseña">
                 </div>
             </div>
         </form>
@@ -57,10 +48,8 @@
             <div class="alert alert-danger"><?php echo $error ?></div>
         <?php endif ?>
 
-        <p> <a href="olvidarCon.php">¿Olvidaste tu contraseña?</a> </p>
-
     </div>
 
-    <a href="../index.html" id="btnSalir"> <i class="fa-solid fa-xmark"></i> </a>
+    <a href="index.php" id="btnSalir"> <i class="fa-solid fa-xmark"></i> </a>
 </body>
 </html>

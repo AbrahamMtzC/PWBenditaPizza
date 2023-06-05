@@ -1,6 +1,6 @@
 <?php
     include("../js/conexion.php");
-    $stmt = $conn->prepare("SELECT * FROM productos");
+    $stmt = $conn->prepare("SELECT * FROM productos ORDER BY id DESC");
     $stmt->execute();
     $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     include("header.php");

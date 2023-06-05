@@ -1,10 +1,5 @@
 /* Fuentes de Bendita Pizza */
 @font-face {
-    font-family: 'FuturaBK';
-    src: url(fonts/FutuBK.ttf);
-}
-
-@font-face {
     src: url("../fonts/poppins.ttf");
     font-family: "Poppins";
 }
@@ -329,7 +324,7 @@ footer {
 
 .noti-titulo{
     color: #FFC221;
-    font-family: 'FuturaBK', sans-serif;
+    font-family: sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 75px;
@@ -1057,3 +1052,26 @@ footer {
 }
 
 /*Fin Acerca de*/
+/*Tambien Visita Bendita burger*/
+.benditaburger{
+    display: none;
+}
+    
+.benditaburger a{
+    background-color: #FFC221;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.benditaburger img {
+    max-height: 125px; 
+    transition: all 0.3s;
+}
+
+.benditaburger img:hover{
+    transform: scale(1.1);
+}
+/*Fin Bendita burger*/
+

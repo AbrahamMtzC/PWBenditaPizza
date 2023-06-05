@@ -1,6 +1,6 @@
 <?php 
     include "js/conexion.php";
-    $stmt = $conn->prepare("SELECT id, nombre, descripcion, foto, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha2 FROM noticias ORDER BY fecha DESC");
+    $stmt = $conn->prepare("SELECT id, nombre, descripcion, foto, DATE_FORMAT(fecha, '%d/%m/%Y') as fecha2 FROM noticias ORDER BY fecha DESC LIMIT 9");
     $stmt->execute();
     $noticias = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -57,7 +57,7 @@
         <div class="newsfeed-grid">
             <?php foreach ($noticias as $noti): ?>
                 <div class="news-item">
-                    <img src="<?php echo substr($noti['foto'], 3); ?>" alt="<?php echo $noti['nombre']; ?>">
+                    <img loading="lazy" src="<?php echo substr($noti['foto'], 3); ?>" alt="<?php echo $noti['nombre']; ?>">
                     <h3><?php echo $noti['nombre']; ?></h3>
                     <h4><?php echo $noti['descripcion']; ?></h4>
                     <h5><?php echo $noti['fecha2']; ?></h5>
@@ -107,6 +107,11 @@
             <a href="reservar.html"><i class="fa-brands fa-whatsapp footicon"></i></a>
         </div>
     </footer>
+     <div class="benditaburger">
+        <a href="https://benditaburgermx.com" target="_blank">
+            <img src="img/benditaburger.png">
+        </a>
+    </div>  
     <!-- boton para regresar -->
     <button onclick="topFunction()" id="btnRegresar" title="Regresar arriba"> <i class="fa-regular fa-circle-up"></i> </button>
 

@@ -62,7 +62,7 @@
             <div class="grid-wrapper">
                 <?php foreach ($fotos as $fot): ?>
                     <div>
-                        <img src="<?php echo substr($fot['foto'], 3); ?>" alt="<?php echo $fot['titulo']; ?>">
+                        <img loading="lazy" src="<?php echo substr($fot['foto'], 3); ?>" alt="<?php echo $fot['titulo']; ?>">
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -109,6 +109,11 @@
             <a href="reservar.html"><i class="fa-brands fa-whatsapp footicon"></i></a>
         </div>
     </footer>
+     <div class="benditaburger">
+        <a href="https://benditaburgermx.com" target="_blank">
+            <img src="img/benditaburger.png">
+        </a>
+    </div>  
     <!-- boton para regresar -->
     <button onclick="topFunction()" id="btnRegresar" title="Regresar arriba"> <i class="fa-regular fa-circle-up"></i> </button>
 

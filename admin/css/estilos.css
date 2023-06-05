@@ -1,10 +1,5 @@
 /* Fuentes de Bendita Pizza */
 @font-face {
-    font-family: 'FuturaBK';
-    src: url(fonts/FutuBK.ttf);
-}
-
-@font-face {
     src: url("../fonts/poppins.ttf");
     font-family: "Poppins";
 }

@@ -20,12 +20,12 @@
     $respuesta = file_get_contents($url);
     $atributos = json_decode($respuesta, TRUE);
 
-    if($atributos['success']){
+    // if($atributos['success']){
        
-    } else {
-        header("Location: index.php?error=Verificar Captcha");
-        exit;
-    }
+    // } else {
+    //     header("Location: index.php?error=Verificar Captcha");
+    //     exit;
+    // }
 
     try {
         $stmt = $conn->prepare("SELECT * FROM administrador WHERE usuario=? AND clave=?");
